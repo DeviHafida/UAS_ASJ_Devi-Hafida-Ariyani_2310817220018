@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Cerita - Cerita Tengah Malam</title>
+    <style>
+    body {
+        font-family: 'Comic Sans MS', Arial, sans-serif;
+        background-color: #fff0f5; /* pink muda */
+        color: #4a4a4a;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #d63384; /* pink fanta */
+        font-size: 28px;
+    }
+
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #ffe4ec; /* pink pastel */
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+        color: #b03060;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #fff;
+        color: #333;
+        border: 2px solid #ffc0cb;
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    .btn {
+        margin-top: 20px;
+        background-color: #ff69b4;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+        background-color: #ff85c1;
+    }
+
+    a {
+        color: #d63384;
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+<h1>🛠️ Edit Cerita Horor</h1>
+
+<form method="POST">
+    <label for="judul">Judul</label>
+    <input type="text" id="judul" name="judul" value="{{ cerita.judul }}" required>
+
+    <label for="penulis">Penulis</label>
+    <input type="text" id="penulis" name="penulis" value="{{ cerita.penulis }}" required>
+
+    <label for="genre">Genre</label>
+    <input type="text" id="genre" name="genre" value="{{ cerita.genre }}" required>
+
+    <label for="link_wattpad">Link Wattpad</label>
+    <input type="text" id="link_wattpad" name="link_wattpad" value="{{ cerita.link_wattpad }}" required>
+
+    <button type="submit" class="btn">Simpan Perubahan</button>
+</form>
+
+<a href="/">Kembali ke daftar</a>
+
+</body>
+</html>

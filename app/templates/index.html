@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Cerita Tengah Malam</title>
+    <style>
+    body {
+        font-family: 'Comic Sans MS', Arial, sans-serif;
+        background-color: #fff0f5; 
+        color: #4a4a4a;
+        padding: 20px;
+    }
+    h1 {
+        text-align: center;
+        color: #d63384; 
+        font-size: 30px;
+    }
+    .tambah-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #ff69b4;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+    .tambah-btn:hover {
+        background-color: #ff85c1;
+    }
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #ffb6c1; /* 🌸 garis luar tabel */
+    }
+
+    th {
+    background-color: #ffc0cb;
+    color: #800040;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #ffa3b5; 
+    }
+    td {
+    border: 1px solid #ffd6e0; 
+    padding: 10px;
+    vertical-align: middle;
+    }
+    tr:nth-child(even) {
+        background-color: #fff5f8;
+    }
+    a {
+        color: #d63384;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    .edit-btn {
+        background-color: #ff85c1;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-right: 5px;
+        display: inline-block;
+    }
+    .hapus-btn {
+        background-color: #ff4d6d;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+    }
+    .edit-btn:hover {
+        background-color: #ffaad4;
+    }
+    .hapus-btn:hover {
+        background-color: #ff6f8c;
+    }
+</style>
+</head>
+<body>
+
+    <h1>📖 Cerita Tengah Malam</h1>
+
+    <a href="/tambah" class="tambah-btn">+ Tambah Cerita</a>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Judul Cerita</th>
+                <th>Story By</th>
+                <th>Kategori</th>
+                <th>URL</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for cerita in cerita %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ cerita.judul }}</td>
+        <td>{{ cerita.penulis }}</td>
+        <td>{{ cerita.genre }}</td>
+        <td><a href="{{ cerita.link_wattpad }}" target="_blank">Baca</a></td>
+        <td>
+            <a href="/edit/{{ cerita.id }}" class="edit-btn">Edit</a>
+            <a href="/hapus/{{ cerita.id }}" class="hapus-btn" onclick="return confirm('Yakin hapus?')">Hapus</a>
+        </td>
+    </tr>
+        {% else %}
+    <tr>
+        <td colspan="6">Belum ada cerita yang ditambahkan.</td>
+    </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+</body>
+</html>

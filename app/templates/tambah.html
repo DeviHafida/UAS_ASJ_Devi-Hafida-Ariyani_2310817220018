@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tambah Cerita - Cerita Tengah Malam</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff0f5; /* pink muda */
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            color: #d63384; /* pink tua */
+            text-align: center;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: #fff8fc;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        .btn {
+            margin-top: 20px;
+            background-color: #d63384;
+            color: white;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #b82e6f;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #a64ac9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tambah Cerita Horor</h1>
+
+    <form method="POST">
+        <label for="judul">Judul</label>
+        <input type="text" id="judul" name="judul" required>
+
+        <label for="penulis">Penulis</label>
+        <input type="text" id="penulis" name="penulis" required>
+
+        <label for="genre">Genre</label>
+        <input type="text" id="genre" name="genre" value="Horor" required>
+
+        <label for="link">Link Wattpad</label>
+        <input type="text" id="link_wattpad" name="link_wattpad" placeholder="https://www.wattpad.com/story/..." required>
+
+        <button type="submit" class="btn">Tambah Cerita</button>
+    </form>
+
+    <a href="/">Kembali ke daftar</a>
+
+</body>
+</html>
