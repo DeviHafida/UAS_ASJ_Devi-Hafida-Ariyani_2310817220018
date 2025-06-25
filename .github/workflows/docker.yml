@@ -28,5 +28,5 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/uas-asj-cerita:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/uas-asj-cerita:latest
 
